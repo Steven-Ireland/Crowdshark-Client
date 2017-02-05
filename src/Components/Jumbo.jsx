@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Jumbo.css';
-import 'purecss';
 
 class App extends Component {
   render() {

@@ -1,0 +1,9 @@
+.Nav.ui.menu {
+    margin-bottom: 0px;
+}
+
+.Nav {
+  z-index: 10;
+
+  /*background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");*/
+}
