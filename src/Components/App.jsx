@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, Redirect, hashHistory } from 'react-router';
 import 'purecss';
 import './App.css';
 
@@ -12,11 +12,12 @@ class App extends Component {
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={BasePage}>
-          <IndexRoute component={Landing} />
+        <Route component={BasePage}>
+          <Route path="/about" component={Landing} />
           <Route path="/browse" component={Browser} />
-          <Route path="/i" component={Closeup} />
+          <Route path="/i/:link" component={Closeup} />
         </Route>
+        <Redirect from="/" to="/about"/>
       </Router>
     );
   }

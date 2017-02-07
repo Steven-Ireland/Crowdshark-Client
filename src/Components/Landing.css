@@ -4,10 +4,8 @@
   height: 30rem;
   position:relative;
 
-  background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png"), linear-gradient(180deg, #93cfa6, #5bcf80);
+  background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png"), linear-gradient(180deg, #80A8C4, #5D8CAE);
 
-
-  box-shadow: inset 0px 10px 30px -10px black; /*, 0px 20px 75px -20px black; /**/
   color: white;
 }
 
@@ -31,4 +29,8 @@
 .Landing section {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.Nav.ui.menu {
+  background-color: transparent;
 }

@@ -4,15 +4,14 @@ import {Menu, Container} from 'semantic-ui-react';
 import './Nav.css';
 
 class Nav extends React.Component {
-
   render () {
     return (
-      <Container>
-        <Menu secondary className="Nav">
-          <Menu.Item as={Link} to='/'
-            name="Temporaryname"/>
-        </Menu>
-      </Container>
+      <Menu className="Nav">
+        <Container>
+          <Menu.Item as={Link} to='/about' name="About" activeClassName="active"/>
+          <Menu.Item as={Link} to='/browse' name="Browse" activeClassName="active"/>
+        </Container>
+      </Menu>
     )
   }
 }

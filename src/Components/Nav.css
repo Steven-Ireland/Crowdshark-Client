@@ -1,9 +1,16 @@
 .Nav.ui.menu {
+    position: relative;
+    z-index: 2;
     margin-bottom: 0px;
+    border-radius: 0px;
+
+    box-shadow: 0px -10px 30px 10px black; /*, 0px 20px 75px -20px black; /**/
 }
 
-.Nav {
-  z-index: 10;
+.Nav .item.active {
+  border-bottom: .2em solid black
+}
 
-  /*background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");*/
+.Nav.ui.menu {
+  border: none;
 }

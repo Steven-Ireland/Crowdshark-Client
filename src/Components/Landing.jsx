@@ -10,14 +10,14 @@ class Landing extends React.Component {
         <section className="splash">
           <div className="splash-center">
             <img src={Logo} alt="Logo"/>
-            <h1>Temporaryname</h1>
-            <p>Genius brought to life</p>
+            <h1>Crowdshark</h1>
+            <p>Revolutionary ideas, implemented.</p>
           </div>
         </section>
         <section>
           <Container>
             <Grid divided="vertically">
-              <Grid.Row columns={2} stackable>
+              <Grid.Row columns={2}>
                 <Grid.Column computer={8} mobile={16}>
                   <Header as="h1" icon textAlign='center'>
                     <Icon name='idea'/>
