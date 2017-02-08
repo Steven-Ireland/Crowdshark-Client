@@ -3,6 +3,7 @@ import { Router, Route, Redirect, hashHistory } from 'react-router';
 import 'purecss';
 import './App.css';
 
+import Register from './Register';
 import Landing from './Landing';
 import Browser from './Browser';
 import Closeup from './Closeup';
@@ -15,6 +16,7 @@ class App extends Component {
         <Route component={BasePage}>
           <Route path="/about" component={Landing} />
           <Route path="/browse" component={Browser} />
+          <Route path="/register" component={Register} />
           <Route path="/i/:link" component={Closeup} />
         </Route>
         <Redirect from="/" to="/about"/>

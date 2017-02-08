@@ -9,7 +9,8 @@ class Nav extends React.Component {
       <Menu className="Nav">
         <Container>
           <Menu.Item as={Link} to='/about' name="About" activeClassName="active"/>
-          <Menu.Item as={Link} to='/browse' name="Browse" activeClassName="active"/>
+          <Menu.Item as={Link} to='/browse' name="Crowdsales" activeClassName="active"/>
+          <Menu.Item as={Link} to='/register' name="Register" activeClassName="active"/>
         </Container>
       </Menu>
     )
