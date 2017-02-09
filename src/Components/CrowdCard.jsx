@@ -7,7 +7,7 @@ class CrowdCard extends React.Component {
   render () {
     return (
       <Card className="CrowdCard" shape="rounded" style={{'backgroundColor': this.props.color}} as={Link} to={this.props.link}>
-        <Image src='http://semantic-ui.com/images/avatar/large/elliot.jpg' />
+        <Image src={this.props.image} />
         <Card.Content>
           <Card.Header>{this.props.name}</Card.Header>
           <Card.Meta >{this.props.owner}</Card.Meta>

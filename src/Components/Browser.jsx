@@ -24,7 +24,7 @@ class Browser extends React.Component {
         <Card.Group>
           {this.state.crowdfunds.map(function(fund) {
             return (
-              <CrowdCard key={fund.name} color={fund.color} name={fund.name} link={fund.link} description={fund.description} />
+              <CrowdCard key={fund.name} color={fund.color} name={fund.name} image={'http://localhost:3001'+fund.image} link={fund.link} description={fund.description} />
             )
           })}
         </Card.Group>
@@ -34,7 +34,7 @@ class Browser extends React.Component {
 }
 
 function load() {
-  return axios.get('http://big:8080/browse').then((res) => res.data);
+  return axios.get('http://big:3001/browse').then((res) => res.data);
 }
 
 export default Browser;
