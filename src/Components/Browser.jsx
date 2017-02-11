@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Container, Card} from 'semantic-ui-react';
 import CrowdCard from './CrowdCard';
+import Closeup from './Closeup';
 import './Browser.css';
 
 class Browser extends React.Component {
@@ -21,10 +22,11 @@ class Browser extends React.Component {
   render () {
     return (
       <Container className="Browser">
+        <Closeup highlight></Closeup>
         <Card.Group>
           {this.state.crowdfunds.map(function(fund) {
             return (
-              <CrowdCard key={fund.name} color={fund.color} name={fund.name} image={'http://localhost:3001'+fund.image} link={fund.link} description={fund.description} />
+              <CrowdCard key={fund.name} color={fund.color} name={fund.name} image={fund.image} link={fund.link} description={fund.description} />
             )
           })}
         </Card.Group>

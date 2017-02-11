@@ -9,7 +9,7 @@ a.CrowdCard.ui.card {
 
   box-sizing: border-box;
 }
-a.CrowdCard.ui.card:hover {
+.ui.cards a.CrowdCard.ui.card:hover, a.CrowdCard.ui.card:hover {
   background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");
 }
 

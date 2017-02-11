@@ -6,7 +6,7 @@ import './Nav.css';
 class Nav extends React.Component {
   render () {
     return (
-      <Menu className="Nav">
+      <Menu fixed="top" className="Nav">
         <Container>
           <Menu.Item as={Link} to='/about' name="About" activeClassName="active"/>
           <Menu.Item as={Link} to='/browse' name="Crowdsales" activeClassName="active"/>

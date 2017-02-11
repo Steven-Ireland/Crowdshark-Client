@@ -22,3 +22,7 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.accent {
+  background-image: radial-gradient(center,#FF9900,#CF000F)  !important;
+}
