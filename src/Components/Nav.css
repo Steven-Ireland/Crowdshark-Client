@@ -4,11 +4,18 @@
     margin-bottom: 0px;
     border-radius: 0px;
 
-    box-shadow: 0px -10px 30px 10px black; /*, 0px 20px 75px -20px black; /**/
+    /*box-shadow: 0px -10px 30px 10px black; /*, 0px 20px 75px -20px black; /**/
+
+    background-image: url('https://www.transparenttextures.com/patterns/worn-dots.png');
+    background-color: #6d7ad1;
+}
+
+.Nav.ui.menu a.item, .Nav.ui.menu a.item:hover {
+  color: white;
 }
 
 .Nav .item.active {
-  border-bottom: .2em solid #CF000F;
+  border-top: .2em solid white;
 }
 
 .Nav.ui.menu {

@@ -3,7 +3,7 @@ import {Button, Container, Header, Grid, Form} from 'semantic-ui-react';
 import axios from 'axios';
 import FileReaderInput from 'react-file-reader-input';
 import CrowdCard from './CrowdCard';
-import {CompactPicker} from 'react-color';
+import {ChromePicker} from 'react-color';
 
 import './Register.css';
 
@@ -13,9 +13,9 @@ class Register extends React.Component {
     this.state = {
       name: 'Example',
       owner: 'Example Inc.',
-      image: 'QmQc8ijGUrdYDVLG8KJmHwezXLGshWg1uxnKZ5xFAbJNqz',
+      image: '',
       description: 'Decentralized Example for the Distributed Age.',
-      color: '#eeeeee'
+      color: '#6d7ad1'
     }
   }
   handleChange(attr, e) {
@@ -36,9 +36,9 @@ class Register extends React.Component {
   render () {
     return (
       <Container className="Register">
+        <Header>Register a Crowdsale</Header>
         <Grid stackable>
           <Grid.Column width="11">
-            <Header>Register a Crowdsale</Header>
             <Form>
               <Form.Input name="name" label='Project Name' placeholder="Project"
                 onChange={this.handleChange.bind(this, 'name')}/>
@@ -54,11 +54,14 @@ class Register extends React.Component {
                   </FileReaderInput>
                 </Form.Input>
               </Form.Field>
+              <div className="field">
+                <label>Color</label>
+                <ChromePicker color={this.state.color} onChange={this.handleChange.bind(this, 'color')} />
+              </div>
             </Form>
-            <CompactPicker color={this.state.color} onChange={this.handleChange.bind(this, 'color')} />
           </Grid.Column>
           <Grid.Column width="5">
-            <CrowdCard name={this.state.name} owner={this.state.owner} image={'http://big:3001/img/'+this.state.image} description={this.state.description} color={this.state.color}/>
+            <CrowdCard name={this.state.name} owner={this.state.owner} image={'http://ipfs.io/ipfs/'+this.state.image} description={this.state.description} color={this.state.color}/>
           </Grid.Column>
         </Grid>
       </Container>

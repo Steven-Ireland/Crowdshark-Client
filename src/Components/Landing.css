@@ -4,7 +4,7 @@
   height: 50rem;
   position:relative;
 
-  background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png"), radial-gradient(center bottom, #FFFF00, #CF000F);
+  background-color:transparant;
   color: white;
 }
 
@@ -30,6 +30,20 @@
   padding-bottom: 3rem;
 }
 
+.Landing .parallax {
+  /*background-image: url('https://www.transparenttextures.com/patterns/shattered-dark.png'), radial-gradient(center top, #FFFF00, #CF000F);*/
+  background-image: url('https://www.transparenttextures.com/patterns/worn-dots.png');
+  background-color: #6d7ad1;
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+}
+
+
 .Nav.ui.menu {
-  background-color: transparent;
+  /*background-color: initial;*/
 }

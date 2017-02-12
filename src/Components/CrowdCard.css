@@ -1,5 +1,5 @@
 a.CrowdCard.ui.card {
-  background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");
+  /*background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");*/
   border-radius: .3em;
   color: white;
 
@@ -10,7 +10,7 @@ a.CrowdCard.ui.card {
   box-sizing: border-box;
 }
 .ui.cards a.CrowdCard.ui.card:hover, a.CrowdCard.ui.card:hover {
-  background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");
+  /*background-image: url("https://www.transparenttextures.com/patterns/shattered-dark.png");*/
 }
 
 .CrowdCard .center {

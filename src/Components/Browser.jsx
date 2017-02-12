@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Container, Card} from 'semantic-ui-react';
+import {Container, Card, Header} from 'semantic-ui-react';
 import CrowdCard from './CrowdCard';
 import Closeup from './Closeup';
 import './Browser.css';
@@ -22,7 +22,9 @@ class Browser extends React.Component {
   render () {
     return (
       <Container className="Browser">
+        <Header content="Featured"/>
         <Closeup highlight></Closeup>
+        <Header content="Browse"/>
         <Card.Group>
           {this.state.crowdfunds.map(function(fund) {
             return (
