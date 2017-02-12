@@ -7,7 +7,9 @@ class CrowdCard extends React.Component {
   render () {
     return (
       <Card className="CrowdCard" shape="rounded" style={{'backgroundColor': this.props.color}} as={Link} to={this.props.link}>
-        <Image height="300px" src={this.props.image} />
+        <div>
+          <Image src={'http://ipfs.io/ipfs/'+this.props.image} />
+        </div>
         <Card.Content>
           <Card.Header>{this.props.name}</Card.Header>
           <Card.Meta >{this.props.owner}</Card.Meta>

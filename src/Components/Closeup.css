@@ -1,3 +1,8 @@
 .Closeup {
   margin-top: 2em;
 }
+
+.Closeup .About {
+  padding-bottom: 5em;
+  padding-top: 3em;
+}

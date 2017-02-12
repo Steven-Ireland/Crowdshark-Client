@@ -1,10 +1,10 @@
 import React from 'react'
-import {Button, Container, Header, Grid, Form} from 'semantic-ui-react';
+import {Button, Container, Header, Grid, Form, Popup, Divider, Icon} from 'semantic-ui-react';
 import axios from 'axios';
 import FileReaderInput from 'react-file-reader-input';
 import CrowdCard from './CrowdCard';
-import {ChromePicker} from 'react-color';
-
+import Closeup from './Closeup';
+import {BlockPicker} from 'react-color';
 import './Register.css';
 
 class Register extends React.Component {
@@ -13,8 +13,11 @@ class Register extends React.Component {
     this.state = {
       name: 'Example',
       owner: 'Example Inc.',
-      image: '',
+      image: 'QmQPxrtqfU8hJXQ3sWFW1jzD7LgmJnV7jwspVkP2f4bjxb',
+      video: 'QmTca4A43f4kEvzTouvYTegtp6KobixRqweV12NrvwwtFP',
+      website: 'www.example.com/crowdsale',
       description: 'Decentralized Example for the Distributed Age.',
+      depth: '# Example Project\n## The Example Token (50% Off)\n\nThe example token grants you access to the **Example Network**.  One EXT can be consumed to pay for 1 hour of _whatever_.  **Tokens are sold in this crowdsale at a 50% discount** compared to post-launch.\n## Example Inc\n\n*Example Inc* is a trusted group proven to deliver. We even have cool graphics. \n![Graphic](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Example 1")\n\nFeel free to use IPFS.io links with your IPFS images.',
       color: '#6d7ad1'
     }
   }
@@ -27,7 +30,7 @@ class Register extends React.Component {
     }
     this.setState(newState);
   }
-  handleImageUpload(e, files) {
+  handleIPFSUpload(e, files) {
     hashFile(files[0][1]).then((hash) => {
       console.log(hash);
       this.setState({image: hash});
@@ -38,38 +41,57 @@ class Register extends React.Component {
       <Container className="Register">
         <Header>Register a Crowdsale</Header>
         <Grid stackable>
-          <Grid.Column width="11">
+          <Grid.Column width="12" tablet="10" computer="12">
             <Form>
               <Form.Input name="name" label='Project Name' placeholder="Project"
                 onChange={this.handleChange.bind(this, 'name')}/>
               <Form.Input name="owner" label="Owner" placeholder="Company / Group"
                 onChange={this.handleChange.bind(this, 'owner')}/>
-              <Form.TextArea name="description" label="Details" placeholder="Describe your product."
+              <Form.Input name="website" label="Website" placeholder="URL"
+                onChange={this.handleChange.bind(this, 'website')}/>
+              <Form.TextArea name="description" label="Details" placeholder="Quickly describe your product."
                 onChange={this.handleChange.bind(this, 'description')}/>
               <Form.Field>
                 <Form.Input name="image" label="Icon" placeholder="IPFS Image Hash" type="text" action>
                   <input onChange={this.handleChange.bind(this, 'image')} value={this.state.image} />
-                  <FileReaderInput as="binary" onChange={this.handleImageUpload.bind(this)}>
-                    <Button type="button" className="accent">Upload</Button>
+                  <FileReaderInput as="binary" onChange={this.handleIPFSUpload.bind(this)}>
+                    <Button type="button" className="accent">Upload Icon</Button>
+                  </FileReaderInput>
+                </Form.Input>
+              </Form.Field>
+              <Form.Field>
+                <Form.Input name="video" label="Video" placeholder="IPFS Video Hash" type="text" action>
+                  <input onChange={this.handleChange.bind(this, 'video')} value={this.state.video} />
+                  <FileReaderInput as="binary" onChange={this.handleIPFSUpload.bind(this)}>
+                    <Button type="button" className="accent">Upload Video</Button>
                   </FileReaderInput>
                 </Form.Input>
               </Form.Field>
               <div className="field">
-                <label>Color</label>
-                <ChromePicker color={this.state.color} onChange={this.handleChange.bind(this, 'color')} />
+                <label className="field">In-Depth Explanation &nbsp;
+                <Popup
+                  trigger={<Icon name="help" size="small" inverted circular />}
+                  content={<a target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">This section uses standard github markdown syntax</a>}
+                  on="click"
+                  hideOnScroll/>
+                </label>
+                <Form.TextArea name="depth" placeholder="Longer section where you can describe the mechanisms of your product and the function of your token."
+                  onChange={this.handleChange.bind(this, 'depth')} value={this.state.depth}/>
               </div>
             </Form>
           </Grid.Column>
-          <Grid.Column width="5">
-            <CrowdCard name={this.state.name} owner={this.state.owner} image={'http://ipfs.io/ipfs/'+this.state.image} description={this.state.description} color={this.state.color}/>
+          <Grid.Column width="4" tablet="6" computer="4">
+            <CrowdCard name={this.state.name} owner={this.state.owner} image={this.state.image} description={this.state.description} color={this.state.color}/>
+            <BlockPicker color={this.state.color} onChange={this.handleChange.bind(this, 'color')} />
           </Grid.Column>
         </Grid>
+        <Divider/>
+        <Header content="Listing Preview"/>
+        <Closeup video={this.state.video} image={this.state.image} markdown={this.state.depth}
+          name={this.state.name} owner={this.state.owner} description={this.state.description}></Closeup>
+        <Button className="accent" fluid type="button">Create Listing (2Ξ)</Button>
       </Container>
     )
-  }
-
-  upload() {
-
   }
 }
 

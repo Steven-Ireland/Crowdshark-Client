@@ -28,9 +28,13 @@ a.CrowdCard.ui.card {
 
 .CrowdCard .ui.statistics {
   height: 100%;
-  align-cards: center;
 }
 
 .CrowdCard .ui.statistics .statistic {
   margin: 0px;
+}
+
+.CrowdCard img {
+  width: 100%;
+  height: auto;
 }

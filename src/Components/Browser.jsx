@@ -23,7 +23,7 @@ class Browser extends React.Component {
     return (
       <Container className="Browser">
         <Header content="Featured"/>
-        <Closeup highlight></Closeup>
+        <Closeup highlight video="QmTca4A43f4kEvzTouvYTegtp6KobixRqweV12NrvwwtFP" description="Desc" name="Name" owner="Owner" image="QmQPxrtqfU8hJXQ3sWFW1jzD7LgmJnV7jwspVkP2f4bjxb"></Closeup>
         <Header content="Browse"/>
         <Card.Group>
           {this.state.crowdfunds.map(function(fund) {

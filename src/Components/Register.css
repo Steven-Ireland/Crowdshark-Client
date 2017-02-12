@@ -8,7 +8,7 @@
   left: -9999px;
 }
 
-.chrome-picker {
-  /*margin: auto;*/
+.block-picker, .CrowdCard.ui.card {
+  margin: auto;
   margin-top: 1em;
 }

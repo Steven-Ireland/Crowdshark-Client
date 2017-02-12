@@ -11,18 +11,18 @@ class Closeup extends React.Component {
       <Container className="Closeup">
         <Grid stackable>
           <Grid.Column width="12">
-            <video width="100%" muted controls autoPlay>
-              <source src="http://ipfs.io/ipfs/QmTca4A43f4kEvzTouvYTegtp6KobixRqweV12NrvwwtFP" type="video/mp4"/>
+            <video width="100%" muted={this.props.highlight} controls>
+              <source src={"http://ipfs.io/ipfs/" + this.props.video} type="video/mp4"/>
             </video>
           </Grid.Column>
           <Grid.Column width="4">
-            <Header content="YOLO" subheader="YNT"/>
+            <Header content={this.props.name} subheader={this.props.owner} image={'http://ipfs.io/ipfs/'+this.props.image}/>
             <Divider/>
-            <p>This is a description of the app.</p>
+            <p>{this.props.description}</p>
             <ActionButton show={!this.props.highlight} link="1234"/>
           </Grid.Column>
         </Grid>
-        <About show={!this.props.highlight}/>
+        <About show={!this.props.highlight} markdown={this.props.markdown} />
       </Container>
     )
   }
@@ -32,7 +32,7 @@ function ActionButton(props) {
   if (props.show) {
     return (
       <div>
-        <Button fluid className="accent" type="button">Buy Tokens</Button>
+        <Button fluid className="accent" type="button" size="large">Buy Tokens</Button>
       </div>
     )
   } else {
@@ -47,8 +47,8 @@ function ActionButton(props) {
 function About(props) {
   if (props.show) {
     return (
-      <div>
-        {renderHTML(new Remarkable().render('# Testing!'))}
+      <div className="About">
+        {renderHTML(new Remarkable().render(props.markdown))}
       </div>)
   } else return null;
 }
