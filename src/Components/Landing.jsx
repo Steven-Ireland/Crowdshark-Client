@@ -1,6 +1,5 @@
 import React from 'react'
 import './Landing.css';
-import Logo from './logo.png';
 import {Container, Header, Icon, Grid} from 'semantic-ui-react';
 
 class Landing extends React.Component {
@@ -10,7 +9,6 @@ class Landing extends React.Component {
         <section className="splash">
           <div className="parallax"></div>
           <div className="splash-center">
-            <img src={Logo} alt="Logo"/>
             <h1>Crowdshark</h1>
             <p>Revolutionary ideas, implemented.</p>
           </div>

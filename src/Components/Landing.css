@@ -16,13 +16,19 @@
   transform: translate(-50%, -50%);
 }
 .Landing img {
-  width: 10rem;
-  height: 10rem;
+  height: 15rem;
 
   filter: brightness(0) invert(1);
 }
 .Landing h1, .Landing p {
   margin: 0px;
+}
+.Landing h1 {
+  font-size: 5rem;
+  font-family: 'Fugaz One';
+}
+.Landing p {
+  font-size: 2rem;
 }
 
 .Landing section {

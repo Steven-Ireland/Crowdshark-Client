@@ -15,7 +15,7 @@
 }
 
 .Nav .item.active {
-  border-top: .2em solid white;
+  border-bottom: .2em solid white;
 }
 
 .Nav.ui.menu {

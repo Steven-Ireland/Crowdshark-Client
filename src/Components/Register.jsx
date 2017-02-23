@@ -7,6 +7,8 @@ import Closeup from './Closeup';
 import {BlockPicker} from 'react-color';
 import './Register.css';
 
+import FactoryController from '../Util/FactoryController';
+
 class Register extends React.Component {
   constructor() {
     super();
@@ -18,7 +20,11 @@ class Register extends React.Component {
       website: 'www.example.com/crowdsale',
       description: 'Decentralized Example for the Distributed Age.',
       depth: '# Example Project\n## The Example Token (50% Off)\n\nThe example token grants you access to the **Example Network**.  One EXT can be consumed to pay for 1 hour of _whatever_.  **Tokens are sold in this crowdsale at a 50% discount** compared to post-launch.\n## Example Inc\n\n*Example Inc* is a trusted group proven to deliver. We even have cool graphics. \n![Graphic](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Example 1")\n\nFeel free to use IPFS.io links with your IPFS images.',
-      color: '#6d7ad1'
+      color: '#6d7ad1',
+      benefactor: '0x0',
+      quantity: 123,
+      startTime: 0,
+      endTime: 1000
     }
   }
   handleChange(attr, e) {
@@ -89,9 +95,23 @@ class Register extends React.Component {
         <Header content="Listing Preview"/>
         <Closeup video={this.state.video} image={this.state.image} markdown={this.state.depth}
           name={this.state.name} owner={this.state.owner} description={this.state.description}></Closeup>
-        <Button className="accent" fluid type="button">Create Listing (2Ξ)</Button>
+        <Button className="accent" fluid type="button" onClick={this.createListing.bind(this)}>Create Listing (2Ξ)</Button>
       </Container>
     )
+  }
+  createListing() {
+    FactoryController.registerCrowdsale({
+      name: this.state.name,
+      image: this.state.image,
+      video: this.state.video,
+      description: this.state.description,
+      depth: this.state.depth,
+      benefactor: this.state.benefactor,
+      quantity: this.state.quantity,
+      owner: this.state.owner,
+      startTime: this.state.startTime,
+      endTime: this.state.endTime
+    });
   }
 }
 
